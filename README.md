@@ -1,10 +1,10 @@
 #邮件&短信服务功能说明
 本系统是基于workerman3.0版本实现，workerman官方网站：http://www.workerman.net/
-*启动服务
+> * 启动服务
 php start.php start		//debug启动
 
 php start.php start -d	//release启动
-*停止服务
+> * 停止服务
 php start.php stop
 
 ##邮件服务：
@@ -12,12 +12,12 @@ php start.php stop
 
 多进程配置项和启动文件：Applications\Email\start.php
 
-*redis数据结构：
+> * redis数据结构：
 $data = json_encode(array('sender' => $sender, 'subject' => $subject,
             'content' => $content, 'to_email' => $to_email, 'stringattachment' => $stringattachment, 
 			'stringembeddedimage' => $stringembeddedimage, 'to_name' => $to_name, 'platform_id' => $platform_id));
 			
-*参数说明：
+> * 参数说明：
 $sender					发送者名称
 
 $subject				邮件标题
@@ -42,11 +42,11 @@ $platform_id			平台id
 
 多进程配置项和启动文件：Applications\Sms\start.php
 
-*redis数据结构：
+> * redis数据结构：
 
 $data = json_encode(array('mobile' => $mobile, 'text' => $text, 'sender' => $sender, 'platform_id' => $platform_id));
 
-*参数说明：
+> * 参数说明：
 $sender					发送者名称
 
 $mobile					接收者手机号
