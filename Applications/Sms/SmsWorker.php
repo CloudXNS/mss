@@ -36,7 +36,8 @@ class SmsWorker
         return true;
     }
 
-    /** 获取配置信息
+    /**
+     * 获取配置信息
      * @param $str
      * @return mixed
      */
@@ -45,7 +46,8 @@ class SmsWorker
         return isset(self::$config[$str]) ? self::$config[$str] : '';
     }
 
-    /** 初始化redis
+    /**
+     * 初始化redis
      *
      */
     protected function initRedis()
@@ -57,7 +59,8 @@ class SmsWorker
         $this->redis->select($this->getConf('redis_db'));
     }
 
-    /** 初始化mysql
+    /**
+     * 初始化mysql
      *
      */
     protected function initSql()
@@ -76,7 +79,8 @@ class SmsWorker
         }
     }
 
-    /** 回收资源
+    /**
+     * 回收资源
      *
      */
     protected function end()
@@ -119,7 +123,8 @@ class SmsWorker
         return $this->sock_post($url, $post_string);
     }
 
-    /** 处理短信
+    /**
+     * 处理短信
      * @param $sms_info
      * @return bool
      */
@@ -157,7 +162,8 @@ class SmsWorker
         return true;
     }
 
-    /** 备份短信数据
+    /**
+     * 备份短信数据
      * @param $table
      * @param $remark
      * @param $title
